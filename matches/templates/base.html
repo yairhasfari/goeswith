@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="descriptin" content="Find out two things go well together or not">
+    <meta name="keywords" content="Goes With, two things, norms">
+    <meta name="author" content="Yair Hasfari">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"><!-- Kaushan Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><!--Montserrat Font-->
+    <link rel="stylesheet" href="{% static 'css/style_new.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Goes With</title>
+</head>
+<body>
+<nav class = "navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class = "navbar-brand" href = "{% url 'home' %}">Goes With </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="topNavBar">
+
+{#            </ul>#}
+
+            <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'search' %}" autocomplete="off">
+                <ul class="nav navbar-nav">
+                    <li><input type="text" class="form-control" placeholder="Enter Object A..." name="qA" id="search_obj1" value="{{ search_obj1 }}" ></li>
+                    <li><input type="text" class="form-control" placeholder="Enter Object B..." name ="qB" id="search_obj2" value="{{ search_obj2 }}" ></li>
+                    <li><button type="submit" class="btn btn-default"></button></li>
+                </ul>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'add' %}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Match</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'random_match' %}"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;Random Match</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

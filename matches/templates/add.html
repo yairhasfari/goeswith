@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Match</title>
+</head>
+<body>
+{% block body %}
+    <div class="container" id="add">
+        <span class="largeText">Add 2 Objects to the web's query</span>
+        <br>
+        <span class="smallText">The Question will be authorized in the next few days by our staff, and will then be active for voting</span>
+        <form method="post" action="{% url 'process' %}" class="addForm" autocomplete="off">
+            {% csrf_token %}
+
+                Object A: <input type="text" placeholder="Enter Object" name="oA" id="search_obj1" value="{{ search_obj1 }}" >
+                Object B: <input type="text" placeholder="Enter Object" name ="oB" id="search_obj2" value="{{ search_obj2 }}" >
+                &nbsp;&nbsp;&nbsp;<button type="submit" value="submit" href="">Add Match</button>
+
+        </form>
+        {% if response != "" %}
+            {% if added == False %}
+                <h4 style="color:red;">{{ response }}</h4>
+            {% else %}
+                <h4 style ="color:green">{{ response }}</h4>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
+</body>
+</html>

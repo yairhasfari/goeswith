@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Match</title>
+</head>
+<body>
+{% block body %}
+    <div class="match_text">
+    {% if match.all %}
+            {% for m in match %}
+                <h2>Search results for <span style="font-style:italic">"{{ m.object1 }}"</span> and <span style="font-style:italic">"{{ m.object2 }}":</span> </h2>
+                <h1>{{ yes_percent }}% of {{ number_of_people }} people think {{ m.object1 }} <span class="logo">Goes With</span> {{ m.object2 }}</h1>
+                <br>
+                <h4>Give your vote:</h4>
+                <br>
+                <form action="{% url "vote" %}" method="post" >
+                    {% csrf_token %}
+                    <div class="cc-selector">
+                        <input id="no" type="radio" name="opinion" value="no" onclick="this.form.submit()"/>
+                        <label class="opinion no" for="no">Hell No</label>
+                        <input id="yes" type="radio" name="opinion" value="yes" onclick="this.form.submit()" />
+                        <label class="opinion yes" for="yes">Fuck Yeah</label>
+                        <input type='hidden' name='rate_id' value='{{ m.id }}' />
+                    </div>
+                </form>
+                <h3>{{ response }}</h3>
+            {% endfor %}
+        {% else %}
+            <h2>Search results for "{{ qA }}" and "{{ qB }}":</h2>
+            <h1>Match does not exist</h1>
+        </div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>
