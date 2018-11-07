@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import matches,Object,Rate,AddressRate
+from .models import Object,Rate,AddressRate
 
 # Register your models here.
 admin.site.register(Object)

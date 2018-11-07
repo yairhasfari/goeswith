@@ -3,7 +3,7 @@ from django.shortcuts import render, render_to_response
 from matches.models import Rate,Object,AddressRate
 from django.db.models import Max
 import random
-from matches.models import matches
+
 # Index:
 def home(request):
     return render(request,'index.html')

@@ -1,13 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class matches(models.Model):
-    object1 = models.CharField(max_length=100)
-    object2 = models.CharField(max_length=100)
-    ans_yes = models.PositiveIntegerField(null=True,blank=False)
-    ans_no = models.PositiveIntegerField(null=True,blank=False)
-    def __str__(self):
-        return self.object1+ ', ' +self.object2
 class Object(models.Model):
     name = models.CharField(max_length=100)
     image = models.CharField(max_length=1000)
