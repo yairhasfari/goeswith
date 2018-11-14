@@ -45,11 +45,11 @@ def search(request):
     return render(request,'match.html',for_match_var)
 # finds other matches containing same objects
 def otherMatches(queryA,queryB):
-    otherMatches1_1 = Rate.objects.filter(object1__name=queryA).exclude(object2__name=queryB)
-    otherMatches1_2 = Rate.objects.filter(object2__name=queryA).exclude(object1__name=queryB)
+    otherMatches1_1 = Rate.objects.filter(object1__name=queryA,approved=True).exclude(object2__name=queryB)
+    otherMatches1_2 = Rate.objects.filter(object2__name=queryA,approved=True).exclude(object1__name=queryB)
     otherMatchesA = otherMatches1_1 | otherMatches1_2
-    otherMatches2_1 = Rate.objects.filter(object1__name=queryB).exclude(object2__name=queryA)
-    otherMatches2_2 = Rate.objects.filter(object2__name=queryB).exclude(object1__name=queryA)
+    otherMatches2_1 = Rate.objects.filter(object1__name=queryB,approved=True).exclude(object2__name=queryA)
+    otherMatches2_2 = Rate.objects.filter(object2__name=queryB,approved=True).exclude(object1__name=queryA)
     otherMatchesB = otherMatches2_1 | otherMatches2_2
     return otherMatchesA[:5], otherMatchesB[:5]
 def find(request,queryA,queryB):
