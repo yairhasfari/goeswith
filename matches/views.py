@@ -128,7 +128,7 @@ def process(request):
             added=True
     return render(request,'add.html',{'response':response,'added':added})
 # Returns a random match from database
-def process(request,queryA,queryB):
+def process2(request,queryA,queryB):
     added=False
     objectA = queryA
     objectB = queryB

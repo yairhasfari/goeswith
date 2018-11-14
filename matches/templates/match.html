@@ -14,15 +14,25 @@
             {% for m in match %}
                 <h2>Search results for <b><span style="font-style:italic">"{{ m.object1 }}"</span></b> and <b><span style="font-style:italic">"{{ m.object2 }}":</span></b> </h2>
                 <h1><b>{{ yes_percent }}%</b> of {{ number_of_people }} people think {{ m.object1 }} <span class="logo">Goes With</span> {{ m.object2 }}</h1>
-                <br>
-                </div>
-                {% if not number_of_people == 0 %}
+                </div><br>
                 <div class="row">
+
+                </div>
+                <div class="rowChartImage">
+                {% if not number_of_people == 0 %}
                     <div class="chart_container">
                         <canvas id="myChart" width="200" height="200"></canvas><br>
                     </div>
-                </div>
                 {% endif %}
+                {% if not m.object1.image == "#" and not m.object2.image == "#" %}
+                    <div class="cont">
+                        <img src="{{ m.object1.image }}">
+                    </div>
+                    <div class="cont">
+                        <img src="{{ m.object2.image }}">
+                    </div>
+                {% endif %}
+                </div>
                 <script>
                 {% block jquery %}
                 var endpoint='/chart/data'
@@ -91,6 +101,7 @@
 {#                <div url-endpoint="{% url 'get_data' %}">#}
 {#                </div>#}
 {#                <div class="row">#}
+                <br>
                 <h4>Give your vote:</h4>
                     <br>
 
