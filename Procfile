@@ -1,1 +1,1 @@
-web: gunicorn matches.wsgi —-log-file -
+web: gunicorn matches.wsgi
