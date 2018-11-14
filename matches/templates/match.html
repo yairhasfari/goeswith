@@ -19,15 +19,15 @@
 
                 </div>
                 <div class="rowChartImage">
-                {% if not number_of_people == 0 %}
-                    <div class="chart_container">
-                        <canvas id="myChart" width="200" height="200"></canvas><br>
-                    </div>
-                {% endif %}
                 {% if not m.object1.image == "#" and not m.object2.image == "#" %}
                     <div class="cont">
                         <img src="{{ m.object1.image }}">
                     </div>
+                    {% if not number_of_people == 0 %}
+                        <div class="chart_container">
+                        <canvas id="myChart" width="200" height="200"></canvas><br>
+                        </div>
+                {% endif %}
                     <div class="cont">
                         <img src="{{ m.object2.image }}">
                     </div>
