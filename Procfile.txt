@@ -1,1 +1,2 @@
-web: gunicorn goeswith.wsgi
+web: gunicorn webweb2.wsgi —-log-file -
+web: gunicorn goeswith.wsgi —-log-file -
