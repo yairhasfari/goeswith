@@ -128,6 +128,36 @@ def process(request):
             added=True
     return render(request,'add.html',{'response':response,'added':added})
 # Returns a random match from database
+def process(request,queryA,queryB):
+    added=False
+    objectA = queryA
+    objectB = queryB
+    # strip from spaces:
+    objectA=objectA.lstrip()
+    objectA=objectA.rstrip()
+    objectB=objectB.lstrip()
+    objectB=objectB.rstrip()
+    # make first letter capital:
+    objectA=objectA.title()
+    objectB = objectB.title()
+    if objectA==objectB:
+        response="Can't match the same object"
+    else:
+    # check if new objects are already in database
+        obAExists = Object.objects.filter(name=objectA).exists()
+        obBExists = Object.objects.filter(name=objectB).exists()
+        if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
+        else: rateObA=Object.objects.create(name=objectA,image="#")
+        if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
+        else: rateObB=Object.objects.create(name=objectB, image="#")
+
+        if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
+            response="Query already exists"
+        else:
+            rate=Rate.objects.create(object1=rateObA,object2=rateObB)
+            response="Query has been added to the website"
+            added=True
+    return render(request,'add.html',{'response':response,'added':added})
 def random_match(request):
     set_session(request)
     match=get_random3()

@@ -26,6 +26,7 @@ urlpatterns = [
     path('search',views.search,name='search'),
     path('find/<str:queryA>-<str:queryB>/',views.find,name='find'),
     path('add',views.add,name='add'),
+    path('adder/<str:queryA>-<str:queryB>/',views.process,name='adder'),
     path('add/process',views.process,name='process'),
     path('random',views.random_match,name='random_match'),
     path('vote',views.vote,name='vote'),

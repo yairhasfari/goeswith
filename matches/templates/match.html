@@ -112,6 +112,11 @@
         {% else %}
             <h2>Search results for "{{ qA }}" and "{{ qB }}":</h2>
             <h1>Match does not exist</h1>
+{#            {% if response %}#}
+{#                <form method="post" action="{% url 'add' %}">#}
+                    <a href="{% url 'adder' queryA=qA queryB=qB %}"><li>Add this match to the website</li></a>
+{#                </form>#}
+{#            {% endif %}#}
         {% endif %}
         <br>
     </div>
