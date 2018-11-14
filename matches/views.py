@@ -9,7 +9,7 @@ from datetime import datetime
 # Index:
 def home(request):
     set_session(request)
-    latestRates=Rate.objects.all().order_by('-id')[:10]
+    latestRates=Rate.objects.filter(approved=True).order_by('-id',)[:10]
     return render(request,'index.html',{'latestRates':latestRates})
 # When 2 objects are searched
 def get_data(request):
