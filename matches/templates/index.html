@@ -4,24 +4,39 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="descriptin" content="Find out two things go well together or not">
+    <meta name="descriptin" content="Find out if two things go well together or not">
     <meta name="keywords" content="Goes With, two things, norms">
     <meta name="author" content="Yair Hasfari">
     {% load static %}
 </head>
 <body>
 {% block body %}
-<section>
-    <div class="container" id="index">
-        <span class="big">
-        Welcome to <span class="logo">GoesWith</span>.
-        </span>
-        <br>
-        Here you get an answer to only one question:
-        <br>
-        Does one thing go with another?
-    </div>
-</section>
+    <section class="welcome">
+        <div class="container" id="index">
+            <span class="big">
+            Welcome to <span class="logo">GoesWith</span>.
+            </span>
+            <br>
+            Here you get an answer to only one question:
+            <br>
+            Does one thing go with another?
+        </div>
+    </section>
+    <section class="latest">
+        <div class="container" id="latset">
+            <span class="big">
+                Latest matches added:
+            </span>
+            <br>
+            <ul style="list-style-type:none;">
+                {% for rate in latestRates %}
+                    <form method="get" action="{% url 'search' %}">
+                        <a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}"><li>Does {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</li></a>
+                    </form>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}
 </body>
 </html>

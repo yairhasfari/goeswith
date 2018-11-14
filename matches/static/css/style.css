@@ -1,13 +1,19 @@
+body {
+    padding-top: 70px;
+    background-color: white;
+}
 .navbar{
     border-radius:0;
     background-color: #414141;
     border-color: #414141;
 }
+
 .navbar-inverse .navbar-brand{
-    font-family: 'Kaushan Script',cursive;
+    font-family: 'Yesteryear',cursive;
     font-size: 30px;
     color:#ccdfcb;
 }
+
 
 /*ObjectA Search Field*/
 .form-control#search_obj1{
@@ -24,6 +30,10 @@
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
     border:none;
+
+}
+.form-control{
+    background-color:white;
 }
 ::placeholder{
     font-family:'Montserrat', sans-serif;
@@ -47,7 +57,7 @@
     background-color:white;
 }
 .logo{
-    font-family: 'Kaushan Script',cursive;
+    font-family: 'Yesteryear',cursive;
 }
 /*index page*/
 .container{
@@ -63,6 +73,9 @@
 .largeText{
     font-size:20px;
 }
+.mediumText{
+    font-size:17px;
+}
 .smallText{
     font-size:15px;
 }
@@ -75,6 +88,22 @@
 .match_text{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+    padding-bottom:5em;
+}
+.sideBySide{
+    font-family: 'Montserrat', sans-serif;
+    display:flex;
+    margin-bottom:5em;
+}
+#firstOtherMatches{
+    flex:1;
+    margin-left:20em;
+}
+#secondOtherMatches{
+    flex:1;
+    overflow:hidden;
+    padding-top:0px;
+
 }
 /*Voting Section:*/
 .cc-selector input{
@@ -84,13 +113,18 @@
             appearance:none;
 }
 .no{
-    font-family:'Kaushan Script',cursive;
+    font-family:'Anton',cursive;
     color:red;
     font-size:20px;
 }
 .yes{
-    font-family:'Kaushan Script',cursive;
+    font-family:'Anton',cursive;
     color:green;
+    font-size:20px;
+}
+.irrelevant{
+    font-family:'Anton',cursive;
+    color: orangered;
     font-size:20px;
 }
 .cc-selector input:active +.opinion{opacity: .9;}
@@ -104,7 +138,7 @@
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    width:100px;height:100px;
+    width:100px;height:50px;
     -webkit-transition: all 100ms ease-in;
        -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
@@ -116,4 +150,8 @@
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
             filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+#chart{
+    height:250px;
+    width:250px;
 }

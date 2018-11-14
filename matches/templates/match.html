@@ -9,30 +9,132 @@
 <body>
 {% block body %}
     <div class="match_text">
-    {% if match.all %}
+     <div class="row">
+        {% if match.all and approved %}
             {% for m in match %}
-                <h2>Search results for <span style="font-style:italic">"{{ m.object1 }}"</span> and <span style="font-style:italic">"{{ m.object2 }}":</span> </h2>
-                <h1>{{ yes_percent }}% of {{ number_of_people }} people think {{ m.object1 }} <span class="logo">Goes With</span> {{ m.object2 }}</h1>
+                <h2>Search results for <b><span style="font-style:italic">"{{ m.object1 }}"</span></b> and <b><span style="font-style:italic">"{{ m.object2 }}":</span></b> </h2>
+                <h1><b>{{ yes_percent }}%</b> of {{ number_of_people }} people think {{ m.object1 }} <span class="logo">Goes With</span> {{ m.object2 }}</h1>
                 <br>
-                <h4>Give your vote:</h4>
-                <br>
-                <form action="{% url "vote" %}" method="post" >
-                    {% csrf_token %}
-                    <div class="cc-selector">
-                        <input id="no" type="radio" name="opinion" value="no" onclick="this.form.submit()"/>
-                        <label class="opinion no" for="no">Hell No</label>
-                        <input id="yes" type="radio" name="opinion" value="yes" onclick="this.form.submit()" />
-                        <label class="opinion yes" for="yes">Fuck Yeah</label>
-                        <input type='hidden' name='rate_id' value='{{ m.id }}' />
+                </div>
+                {% if not number_of_people == 0 %}
+                <div class="row">
+                    <div class="chart_container">
+                        <canvas id="myChart" width="200" height="200"></canvas><br>
                     </div>
-                </form>
+                </div>
+                {% endif %}
+                <script>
+                {% block jquery %}
+                var endpoint='/chart/data'
+                var defaultData=[{{ no_percent }},{{ irrelevant_percent }},{{ yes_percent }}]
+                var labels=[]
+                $.ajax({
+                    method:"GET",
+                    url:endpoint,
+                    success: function(data){
+                        labels=data.labels
+                        console.log(defaultData)
+                        setChart()
+                    },
+                    error: function(error_data){
+                        console.log(error_data)
+                    }
+                })
+                function setChart(){
+                    var ctx=document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: '# of Votes',
+                                data: defaultData,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.8)',
+                                    'rgba(255, 206, 86, 0.8)',
+                                    'rgba(86, 244, 76, 0.8)',
+                                ],
+                            }]
+                        },
+                        options:{
+                            legend: {
+                                display: true,
+
+                                labels: {
+                                    fontFamily: 'Montserrat',
+                                    boxWidth:20
+                                }
+                            },
+                            cutoutPercentage:30,
+                            animation:{animateScale:true}
+                        }
+                    });
+                    {#var ctx2=document.getElementById("myChart2");#}
+                    {#var myChart2 = new Chart(ctx2, {#}
+                    {#    type: 'pie',#}
+                    {#    data: {#}
+                    {#        labels: labels,#}
+                    {#        datasets: [{#}
+                    {#            label: '# of Votes',#}
+                    {#            data: defaultData,#}
+                    {#            backgroundColor: [#}
+                    {#                'rgba(255, 99, 132, 0.8)',#}
+                    {#                'rgba(255, 206, 86, 0.8)',#}
+                    {#                'rgba(86, 244, 76, 0.8)',#}
+                    {#            ],#}
+                    {#        }]#}
+                    {#    }#}
+                    {# });#}
+                }
+                {% endblock jquery %}
+                </script>
+{#                <div url-endpoint="{% url 'get_data' %}">#}
+{#                </div>#}
+{#                <div class="row">#}
+                <h4>Give your vote:</h4>
+                    <br>
+
+                    <form action="{% url "vote" %}" method="post" >
+                        {% csrf_token %}
+                        <div class="cc-selector">
+                            <input id="no" type="radio" name="opinion" value="no" onclick="this.form.submit()"/>
+                            <label class="opinion no" for="no">Nah</label>
+                            <input id="irrelevant" type="radio" name="opinion" value="irrelevant" onclick="this.form.submit()" />
+                            <label class="opinion irrelevant" for="irrelevant">Dumb Question</label>
+                            <input id="yes" type="radio" name="opinion" value="yes" onclick="this.form.submit()" />
+                            <label class="opinion yes" for="yes">Yup</label>
+                            <input type='hidden' name='rate_id' value='{{ m.id }}' />
+                        </div>
+                    </form>
+{#                </div>#}
                 <h3>{{ response }}</h3>
             {% endfor %}
         {% else %}
             <h2>Search results for "{{ qA }}" and "{{ qB }}":</h2>
             <h1>Match does not exist</h1>
+        {% endif %}
+        <br>
+    </div>
+    <div class="row">
+        <div class="sideBySide">
+                <div id="firstOtherMatches">
+                    {% if otherMatchesA.all %}
+                        <span class="largeText">Other Matches for <i>"{{ qA }}":</i></span><br>
+                        {% for othermatch in otherMatchesA %}
+                            <a href="{% url 'find' queryA=othermatch.object1 queryB=othermatch.object2 %}"><span class="mediumText">Does {{ othermatch.object1 }} <span class="logo">Go With</span> {{ othermatch.object2 }}?</span></a><br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="secondOtherMatches">
+                    {% if otherMatchesB.all %}
+                        <span class="largeText">Other Matches for <i>"{{ qB }}":</i></span><br>
+                        {% for othermatch in otherMatchesB %}
+                            <a href="{% url 'find' queryA=othermatch.object1 queryB=othermatch.object2 %}"><span class="mediumText">Does {{ othermatch.object1 }} <span class="logo">Go With</span> {{ othermatch.object2 }}?</span></a><br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
         </div>
-    {% endif %}
+    </div>
 {% endblock %}
 </body>
 </html>

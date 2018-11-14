@@ -1,0 +1,161 @@
+body {
+    padding-top: 70px;
+    background-color: white;
+}
+.navbar{
+    border-radius:0;
+    background-color: #414141;
+    border-color: #414141;
+}
+
+.navbar-inverse .navbar-brand{
+    font-family: 'Yesteryear',cursive;
+    font-size: 30px;
+    color:#ccdfcb;
+}
+
+
+/*ObjectA Search Field*/
+.form-control#search_obj1{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border:none;
+}
+/*ObjectA Search Field*/
+.form-control#search_obj2{
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border:none;
+
+}
+.form-control{
+    background-color:white;
+}
+::placeholder{
+    font-family:'Montserrat', sans-serif;
+}
+/*Navigator Search Button*/
+.btn-default{
+    background-image: url("../img/search_grey.png");
+    background-repeat:no-repeat;
+    background-size: 20px;
+    background-position:center;
+    background-color: #ccdfcb;
+    height:2.4em;
+    width:4em;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border:none;
+}
+.btn-default:hover{
+    background-color:white;
+}
+.logo{
+    font-family: 'Yesteryear',cursive;
+}
+/*index page*/
+.container{
+    font-family: 'Montserrat', sans-serif;
+    line-height:3;
+}
+.container#index{
+    font-size:25px;
+}
+.container#add{
+    font-size:12px;
+}
+.largeText{
+    font-size:20px;
+}
+.mediumText{
+    font-size:17px;
+}
+.smallText{
+    font-size:15px;
+}
+.addForm{
+    line-height:2;
+}
+.big{
+    font-size:40px
+}
+.match_text{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom:5em;
+}
+.sideBySide{
+    font-family: 'Montserrat', sans-serif;
+    display:flex;
+    margin-bottom:5em;
+    position: center;
+}
+#firstOtherMatches{
+    flex:1;
+    margin-left:20em;
+}
+#secondOtherMatches{
+    flex:1;
+    overflow:hidden;
+    padding-top:0px;
+
+}
+/*Voting Section:*/
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.no{
+    font-family:'Anton',cursive;
+    color:red;
+    font-size:20px;
+}
+.yes{
+    font-family:'Anton',cursive;
+    color:green;
+    font-size:20px;
+}
+.irrelevant{
+    font-family:'Anton',cursive;
+    color: orangered;
+    font-size:20px;
+}
+.cc-selector input:active +.opinion{opacity: .9;}
+.cc-selector input:checked +.opinion{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.opinion{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:50px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.opinion:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+.chart_container{
+    height:300px;
+    width:300px;
+    display:inline-block;
+    position:center;
+}
+

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from matches import views
+from matches.views import ChartData
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -23,10 +24,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('search',views.search,name='search'),
+    path('find/<str:queryA>-<str:queryB>/',views.find,name='find'),
     path('add',views.add,name='add'),
     path('add/process',views.process,name='process'),
     path('random',views.random_match,name='random_match'),
     path('vote',views.vote,name='vote'),
+    path('get_data',views.get_data,name='get_data'),
+    path('chart/data',ChartData.as_view()),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

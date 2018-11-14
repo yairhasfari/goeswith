@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'webweb2.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'mysql.connector.django',
+        # 'ENGINE': 'mysql.connector.django',
         'NAME': 'matches',
         'USER': 'root',
-        'PASSWORD': 'x7nacrDi',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '3306',
     }
