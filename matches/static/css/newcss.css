@@ -90,10 +90,11 @@ body {
 .logo{
     font-family: 'Yesteryear',cursive;
 }
-.nav.navbar-nav.navbar-right li a{
+.nav.navbar-nav.navbar-right li a {
     color: #dc322f;
-    fonta-family:'Montserrat',sans-serif;
-}.nav.navbar-nav.navbar-right li a:hover{
+    fonta-family: 'Montserrat', sans-serif;
+}
+.nav.navbar-nav.navbar-right li a:hover{
     color: #7F8177;
 }
 /*index page*/
@@ -102,19 +103,19 @@ body {
     line-height:2.5;
 }
 .container#index{
-    font-size:25px;
+    font-size:170%;
 }
 .container#add{
     font-size:12px;
 }
 .largeText{
-    font-size:1.5em;
+    font-size:150%;
 }
 .mediumText{
-    font-size:17px;
+    font-size:120%;
 }
 .smallText{
-    font-size:15px;
+    font-size:100%;
 }
 .addForm{
     line-height:2;
@@ -203,12 +204,13 @@ body {
     height:150px;
     display:inline-block;
     position:center;
+    border-radius:50%;
+    border:0.2em solid #7F8177;
 }
 .cont img{
     width:100%;
     height:auto;
-    border-radius:50%;
-    border:0.2em solid #7F8177;
+
 }
 .rowChartImage{
     display: -webkit-flex; /* Safari */

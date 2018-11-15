@@ -20,16 +20,15 @@
                 </div><br>
                 <div class="rowChartImage">
                 {% if not m.object1.image == "#" and not m.object2.image == "#" %}
-                    <div class="cont">
-                        <img src="{{ m.object1.image }}">
+                    <div class="cont" style="background-image:url('{{ m.object1.image }}');background-size:150px auto;">
+{#                        <img src="{{ m.object1.image }}">#}
                     </div>
                     {% if not number_of_people == 0 %}
                         <div class="chart_container">
                         <canvas id="myChart" width="200" height="200"></canvas><br>
                         </div>
                 {% endif %}
-                    <div class="cont">
-                        <img src="{{ m.object2.image }}">
+                    <div class="cont" style="background-image:url('{{ m.object2.image }}');background-size:150px auto;">
                     </div>
                 {% else %}
                     {% if not number_of_people == 0 %}
@@ -104,9 +103,6 @@
                 }
                 {% endblock jquery %}
                 </script>
-{#                <div url-endpoint="{% url 'get_data' %}">#}
-{#                </div>#}
-{#                <div class="row">#}
                 <br>
                 <h4>Give your vote:</h4>
                     <br>
