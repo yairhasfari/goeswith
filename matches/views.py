@@ -1,5 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
 from matches.models import Rate, Object, ClientRate
 from django.db.models import Max
 import random
@@ -170,7 +170,9 @@ def random_match(request):
     otherMatchesA, otherMatchesB = otherMatches(queryA, queryB)
     for_match_var['otherMatchesA'] = otherMatchesA
     for_match_var['otherMatchesB'] = otherMatchesB
-    return render(request,'match.html',for_match_var)
+    # return render(request,'match.html',for_match_var)
+    httpurl='find/'+queryA+'-'+queryB+'/'
+    return redirect(httpurl)
 def get_random3():
      max_id = Rate.objects.all().aggregate(max_id=Max("id"))['max_id']
      while True:
