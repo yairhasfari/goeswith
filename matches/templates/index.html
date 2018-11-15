@@ -13,8 +13,8 @@
 {% block body %}
     <section class="welcome">
         <div class="container" id="index">
-            <span class="big">
-            Welcome to <span class="logo">GoesWith</span>.
+            <span class="bigText">
+                Welcome to <span class="redColor"><span class="logo">GoesWith</span></span>.
             </span>
             <br>
             Here you get an answer to only one question:
@@ -24,14 +24,14 @@
     </section>
     <section class="latest">
         <div class="container" id="latset">
-            <span class="big">
+            <span class="largeText"><b>
                 Latest matches added:
-            </span>
+            </b></span>
             <br>
             <ul style="list-style-type:none;">
                 {% for rate in latestRates %}
                     <form method="get" action="{% url 'search' %}">
-                        <a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}"><li>Does {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</li></a>
+                        <span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}"><li>Does {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</li></a></span>
                     </form>
                 {% endfor %}
             </ul>

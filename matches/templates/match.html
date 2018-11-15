@@ -15,12 +15,9 @@
      <div class="row">
         {% if match.all and approved %}
             {% for m in match %}
-                <h2>Search results for <b><span style="font-style:italic">"{{ m.object1 }}"</span></b> and <b><span style="font-style:italic">"{{ m.object2 }}":</span></b> </h2>
-                <h1><b>{{ yes_percent }}%</b> of {{ number_of_people }} people think {{ m.object1 }} <span class="logo">Goes With</span> {{ m.object2 }}</h1>
+                <span class="largeText">Search results for <b><span style="font-style:italic">"{{ m.object1 }}"</span></b> and <b><span style="font-style:italic">"{{ m.object2 }}":</span></b> </span></h2><br>
+                <span class="bigText"><b>{{ yes_percent }}%</b> of {{ number_of_people }} people think <span class="redColor">{{ m.object1 }}</span> <span class="logo">Goes With</span> <span class="redColor">{{ m.object2 }}</span></span>
                 </div><br>
-                <div class="row">
-
-                </div>
                 <div class="rowChartImage">
                 {% if not m.object1.image == "#" and not m.object2.image == "#" %}
                     <div class="cont">
@@ -34,6 +31,12 @@
                     <div class="cont">
                         <img src="{{ m.object2.image }}">
                     </div>
+                {% else %}
+                    {% if not number_of_people == 0 %}
+                        <div class="chart_container">
+                        <canvas id="myChart" width="200" height="200"></canvas><br>
+                        </div>
+                    {% endif %}
                 {% endif %}
                 </div>
                 <script>
