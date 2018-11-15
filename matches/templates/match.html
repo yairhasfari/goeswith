@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <meta property="og:url" content="https://goeswith.herokuapp.com/find/{{ qA }}-{{ qB }}/" />
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="Do Dinosaurs Go With Art?">
-
     <title>Match</title>
 </head>
 <body>
 {% block body %}
+    <meta property="og:url" content="https://goeswith.herokuapp.com/find/{{ qA }}-{{ qB }}/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Do Dinosaurs Go With Art?">
     <div class="match_text">
      <div class="row">
         {% if match.all and approved %}
