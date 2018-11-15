@@ -205,7 +205,7 @@ body {
     display:inline-block;
     position:center;
     border-radius:50%;
-    border:0.2em solid #7F8177;
+    /*border:0.2em solid #7F8177;*/
 }
 .cont img{
     width:100%;
@@ -213,6 +213,9 @@ body {
 
 }
 .rowChartImage{
+    width:50%;
+    height:auto;
+    margin:0 auto;
     display: -webkit-flex; /* Safari */
     -webkit-align-items: center; /* Safari 7.0+ */
     display: flex;
