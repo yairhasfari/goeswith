@@ -14,7 +14,7 @@
         <form method="post" action="{% url 'process' %}" class="addForm" autocomplete="off">
             {% csrf_token %}
 
-                Object A: <input type="text" placeholder="Enter Object" name="oA" id="search_obj1" value="{{ search_obj1 }}" >
+                Object A: <input type="text" placeholder="Enter Object" name="oA" id="search_obj1" value="{{ search_obj1 }}" ><br>
                 Object B: <input type="text" placeholder="Enter Object" name ="oB" id="search_obj2" value="{{ search_obj2 }}" >
                 &nbsp;&nbsp;&nbsp;<button type="submit" value="submit" href="">Add Match</button>
 
