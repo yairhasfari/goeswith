@@ -193,29 +193,23 @@ body {
             filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 .chart_container{
-    height:300px;
-    width:300px;
+    height:30%;
+    width:auto;
     display:inline-block;
     position:center;
 }
 
 .cont{
-    width:150px;
-    height:150px;
+    width:7em;
+    height:7em;
     display:inline-block;
     position:center;
     border-radius:50%;
     /*border:0.2em solid #7F8177;*/
 }
-.cont img{
-    width:100%;
-    height:auto;
 
-}
 .rowChartImage{
-    width:55em;
-    background-color:black;
-    height:auto;
+    width:30em;
     margin:0 auto;
     display: -webkit-flex; /* Safari */
     -webkit-align-items: center; /* Safari 7.0+ */
