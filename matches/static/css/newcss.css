@@ -213,7 +213,8 @@ body {
 
 }
 .rowChartImage{
-    width:50%;
+    width:55em;
+    background-color:black;
     height:auto;
     margin:0 auto;
     display: -webkit-flex; /* Safari */
