@@ -2,10 +2,10 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, render_to_response, redirect
 from matches.models import Rate, Object, ClientRate
 from django.db.models import Max
-import random
+import random, inflect
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from datetime import datetime
+
 # Index:
 def home(request):
     set_session(request)
@@ -98,6 +98,7 @@ def add(request):
     return render(request,'add.html')
 # Adding the actual match to website:
 def process(request):
+    p=inflect.engine()
     added=False
     objectA = request.POST.get('oA')
     objectB = request.POST.get('oB')
@@ -116,9 +117,14 @@ def process(request):
         obAExists = Object.objects.filter(name=objectA).exists()
         obBExists = Object.objects.filter(name=objectB).exists()
         if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
-        else: rateObA=Object.objects.create(name=objectA,image="#")
+        else:
+            plural=False
+            if p.plural(objectA): plural = True
+            rateObA=Object.objects.create(name=objectA,image="#",plural=plural)
         if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
-        else: rateObB=Object.objects.create(name=objectB, image="#")
+        else:
+            if p.plural(objectB): plural = True
+            rateObB=Object.objects.create(name=objectB, image="#")
 
         if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
             response="Query already exists"

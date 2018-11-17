@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 class Object(models.Model):
     name = models.CharField(max_length=100)
     image = models.CharField(max_length=1000)
+    plural = models.BooleanField(default=False)
     def __str__(self):
         return self.name
 class Rate(models.Model):

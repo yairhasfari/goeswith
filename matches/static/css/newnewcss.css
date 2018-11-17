@@ -1,19 +1,27 @@
 body {
+
     padding-top: 70px;
     background-color: white;
+    color: black;
 }
 .navbar{
     border-radius:0;
-    background-color: #414141;
-    border-color: #414141;
+    background-color: white;
+    border-color: #dc322f;
 }
 
-.navbar-inverse .navbar-brand{
+.navbar-default .navbar-brand{
     font-family: 'Yesteryear',cursive;
     font-size: 30px;
-    color:#ccdfcb;
+    color:#dc322f;
 }
-
+.nav.navbar-nav.navbar-right li a span{
+    color: #dc322f;
+}
+.nav.navbar-nav{
+    margin-right:3em;
+    font-family: 'Montserrat', sans-serif;
+}
 
 /*ObjectA Search Field*/
 .form-control#search_obj1{
@@ -21,7 +29,11 @@ body {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
-    border:none;
+
+    border-right:none;
+    border-top:none;
+    border-bottom:none;
+    border-color: #dc322f;
 }
 /*ObjectA Search Field*/
 .form-control#search_obj2{
@@ -29,61 +41,93 @@ body {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
-    border:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-color: #dc322f;
 
 }
 .form-control{
-    background-color:white;
+    background-color: white;
+    color: #dc322f;
+    text-align:center;
 }
-::placeholder{
+.no-border {
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+}
+.form-control::placeholder{
     font-family:'Montserrat', sans-serif;
+    color: #dc322f;
+    opacity: 0.5;
+}
+.form-control:focus,form-control:active{
+    box-shadow:none;
+    outline:0px;
 }
 /*Navigator Search Button*/
 .btn-default{
-    background-image: url("../img/search_grey.png");
+    background-image: url("../img/searchicon_red.png");
     background-repeat:no-repeat;
     background-size: 20px;
     background-position:center;
-    background-color: #ccdfcb;
+    background-color:white;
+    border-left-width: 1px;
     height:2.4em;
     width:4em;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-    border:none;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
+    border-color: #dc322f;
 }
 .btn-default:hover{
     background-color:white;
+    background-image: url("../img/search_grey.png");
 }
 .logo{
     font-family: 'Yesteryear',cursive;
 }
+.nav.navbar-nav.navbar-right li a {
+    color: #dc322f;
+}
+.nav.navbar-nav.navbar-right li a:hover{
+    color: #7F8177;
+}
 /*index page*/
 .container{
     font-family: 'Montserrat', sans-serif;
-    line-height:3;
+    line-height:2.5;
 }
 .container#index{
-    font-size:25px;
+    font-size:170%;
+    border-bottom: #dc322f solid 1px;
+    width:50%;
+    margin-left:0;
+}
+.container#latest {
+    margin-left: 0;
 }
 .container#add{
     font-size:12px;
 }
 .largeText{
-    font-size:20px;
+    font-size:150%;
 }
 .mediumText{
-    font-size:17px;
+    font-size:120%;
 }
 .smallText{
-    font-size:15px;
+    font-size:100%;
 }
 .addForm{
     line-height:2;
 }
-.big{
-    font-size:40px
+.bigText{
+    font-size:2.5em;
 }
 .match_text{
     text-align: center;
@@ -93,16 +137,19 @@ body {
 .sideBySide{
     font-family: 'Montserrat', sans-serif;
     display:flex;
+    justify-content: space-evenly;
     margin-bottom:5em;
+    position: center;
+    padding-top:2.5em;
 }
 #firstOtherMatches{
-    flex:1;
-    margin-left:20em;
+
+    /*margin-left:20em;*/
 }
 #secondOtherMatches{
-    flex:1;
+
     overflow:hidden;
-    padding-top:0px;
+    padding-top:0;
 
 }
 /*Voting Section:*/
@@ -151,7 +198,34 @@ body {
        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
             filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
-#chart{
-    height:250px;
-    width:250px;
+.chart_container{
+    height:30%;
+    width:auto;
+    display:inline-block;
+    position:center;
+}
+
+.cont{
+    width:7em;
+    height:7em;
+    display:inline-block;
+    position:center;
+    border-radius:50%;
+    /*border:0.2em solid #7F8177;*/
+}
+
+.rowChartImage{
+    width:30em;
+    margin:0 auto;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.redColor{
+    color: #dc322f;
+}
+a{
+    color: #dc322f;
 }
