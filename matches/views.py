@@ -5,8 +5,9 @@ from django.db.models import Max
 import random, inflect
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from google_images_download import google_images_download
-
+import sys
+sys.path.insert(0, "gid/google_images_download")
+import google_images_download
 # Index:
 def home(request):
     set_session(request)
