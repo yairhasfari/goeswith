@@ -113,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1224">
+            <state relative-caret-position="-2035">
               <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -126,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gid/google_images_download/google_images_download.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="564" column="77" selection-start-line="564" selection-start-column="77" selection-end-line="564" selection-end-column="77" />
+            <state relative-caret-position="34">
+              <caret line="384" column="98" selection-start-line="384" selection-start-column="62" selection-end-line="384" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -192,6 +192,8 @@
       <find>ivory</find>
       <find>googleimagesdownload</find>
       <find>no_download</find>
+      <find>usage</find>
+      <find>rights</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Yair\PycharmProjects\webweb2\matches\static\css</dir>
@@ -694,7 +696,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matches/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1224">
+        <state relative-caret-position="-2035">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -705,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gid/google_images_download/google_images_download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="564" column="77" selection-start-line="564" selection-start-column="77" selection-end-line="564" selection-end-column="77" />
+        <state relative-caret-position="34">
+          <caret line="384" column="98" selection-start-line="384" selection-start-column="62" selection-end-line="384" selection-end-column="98" />
         </state>
       </provider>
     </entry>

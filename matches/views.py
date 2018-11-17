@@ -169,7 +169,7 @@ def process2(request,queryA,queryB):
     return render(request,'add.html',{'response':response,'added':added})
 def get_image_url(keyword):
     response = google_images_download.googleimagesdownload()
-    absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True})
+    absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True,'usage_rights':'labeled-for-reuse-with-modifications'})
     return absolute_image_paths.get(keyword)[0]
 def random_match(request):
     set_session(request)
