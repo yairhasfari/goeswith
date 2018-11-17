@@ -10,6 +10,8 @@ sys.path.insert(0, "gid/google_images_download")
 import google_images_download
 # Index:
 def home(request):
+    p=inflect.engine()
+    print(p.singular_noun('blue lagoons'))
     set_session(request)
     response = google_images_download.googleimagesdownload()
     keyword='vegan'
@@ -126,12 +128,12 @@ def process(request):
         if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
         else: #if objects needs to be created
             plural=False
-            if p.plural(objectA): plural = True
+            if p.singular_noun(objectA)!=False: plural = True
             img=get_image_url(objectA)
             rateObA=Object.objects.create(name=objectA,image=img,plural=plural)
         if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
         else: #if object b needs to be created
-            if p.plural(objectB): plural = True
+            if p.plural(objectB)!=False: plural = True
             img=get_image_url(objectB)
             rateObB=Object.objects.create(name=objectB, image=img,plural=plural)
         if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
@@ -143,6 +145,7 @@ def process(request):
     return render(request,'add.html',{'response':response,'added':added})
 # Returns a random match from database
 def process2(request,queryA,queryB):
+    p = inflect.engine()
     added=False
     objectA = queryA
     objectB = queryB
@@ -163,12 +166,12 @@ def process2(request,queryA,queryB):
         if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
         else: #if objects needs to be created
             plural=False
-            if p.plural(objectA): plural = True
+            if p.plural(objectA)!=False: plural = True
             img=get_image_url(objectA)
             rateObA=Object.objects.create(name=objectA,image=img,plural=plural)
         if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
         else: #if object b needs to be created
-            if p.plural(objectB): plural = True
+            if p.plural(objectB)!=False: plural = True
             img=get_image_url(objectB)
             rateObB=Object.objects.create(name=objectB, image=img,plural=plural)
         if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
