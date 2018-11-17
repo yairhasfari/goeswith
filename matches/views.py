@@ -5,6 +5,7 @@ from django.db.models import Max
 import random, inflect
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from google_images_download import google_images_download
 
 # Index:
 def home(request):
@@ -117,15 +118,16 @@ def process(request):
         obAExists = Object.objects.filter(name=objectA).exists()
         obBExists = Object.objects.filter(name=objectB).exists()
         if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
-        else:
+        else: #if objects needs to be created
             plural=False
             if p.plural(objectA): plural = True
-            rateObA=Object.objects.create(name=objectA,image="#",plural=plural)
+            img=get_image_url(objectA)
+            rateObA=Object.objects.create(name=objectA,image=img,plural=plural)
         if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
-        else:
+        else: #if object b needs to be created
             if p.plural(objectB): plural = True
-            rateObB=Object.objects.create(name=objectB, image="#")
-
+            img=get_image_url(objectB)
+            rateObB=Object.objects.create(name=objectB, image=img,plural=plural)
         if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
             response="Query already exists"
         else:
@@ -164,6 +166,10 @@ def process2(request,queryA,queryB):
             response="Query has been added to the website"
             added=True
     return render(request,'add.html',{'response':response,'added':added})
+def get_image_url(keyword):
+    response = google_images_download.googleimagesdownload()
+    absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True})
+    return absolute_image_paths.get(keyword)[0]
 def random_match(request):
     set_session(request)
     match=get_random3()
