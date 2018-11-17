@@ -21,13 +21,26 @@
     <section>
         <div class="container" id="latest">
             <span class="largeText"><b>
-                Check out our latest matches:
+                Recently Added:
             </b></span>
             <br>
             <ul style="list-style-type:none;">
                 {% for rate in latestRates %}
                     <form method="get" action="{% url 'search' %}">
-                        <span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}"><li>Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</li></a></span>
+                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ rate.created }}</span></span></li>
+                    </form>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="container" id="latest">
+            <span class="largeText"><b>
+                Recently Rated:
+            </b></span>
+            <br>
+            <ul style="list-style-type:none;">
+                {% for rate in latelyRated %}
+                    <form method="get" action="{% url 'search' %}">
+                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ rate.created }}</span></span><li>
                     </form>
                 {% endfor %}
             </ul>

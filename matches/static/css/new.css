@@ -105,11 +105,14 @@ body {
 .container#index{
     font-size:170%;
     border-bottom: #dc322f solid 1px;
-    width:50%;
+    width:90%;
     margin-left:0;
+
 }
 .container#latest {
     margin-left: 0;
+    width:45%;
+    display:inline-block;
 }
 .container#add{
     font-size:12px;
@@ -121,7 +124,7 @@ body {
     font-size:120%;
 }
 .smallText{
-    font-size:100%;
+    font-size:65%;
 }
 .addForm{
     line-height:2;

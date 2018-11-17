@@ -23,6 +23,13 @@ class Rate(models.Model):
             self.created = datetime.now()
         self.modified = datetime.now()
         return super(Rate, self).save(*args, **kwargs)
+
+    def save(self):
+        ''' On save, update timestamps '''
+        if not self.id:
+            self.created = datetime.now()
+        self.modified = datetime.now()
+
     class Meta:
         unique_together = ('object1', 'object2')
     def __str__(self):

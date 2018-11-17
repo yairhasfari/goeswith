@@ -2,7 +2,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, render_to_response, redirect
 from matches.models import Rate, Object, ClientRate
 from django.db.models import Max
-import random, inflect
+import random, inflect,datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import sys
@@ -11,8 +11,13 @@ import google_images_download
 # Index:
 def home(request):
     set_session(request)
+    response = google_images_download.googleimagesdownload()
+    keyword='vegan'
+    absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True,'usage_rights':'labeled-for-reuse-with-modifications'})
+    print (absolute_image_paths.get(keyword)[0])
     latestRates=Rate.objects.filter(approved=True).order_by('-id',)[:10]
-    return render(request,'index.html',{'latestRates':latestRates})
+    latelyRated = Rate.objects.filter(approved=True).order_by('-modified',)[:10]
+    return render(request,'index.html',{'latestRates':latestRates,'latelyRated':latelyRated})
 # When 2 objects are searched
 def get_data(request):
     data={
@@ -156,10 +161,16 @@ def process2(request,queryA,queryB):
         obAExists = Object.objects.filter(name=objectA).exists()
         obBExists = Object.objects.filter(name=objectB).exists()
         if obAExists: rateObA=Object.objects.filter(name=objectA)[0]
-        else: rateObA=Object.objects.create(name=objectA,image="#")
+        else: #if objects needs to be created
+            plural=False
+            if p.plural(objectA): plural = True
+            img=get_image_url(objectA)
+            rateObA=Object.objects.create(name=objectA,image=img,plural=plural)
         if obBExists: rateObB=Object.objects.filter(name=objectB)[0]
-        else: rateObB=Object.objects.create(name=objectB, image="#")
-
+        else: #if object b needs to be created
+            if p.plural(objectB): plural = True
+            img=get_image_url(objectB)
+            rateObB=Object.objects.create(name=objectB, image=img,plural=plural)
         if Rate.objects.filter(object1=rateObA,object2=rateObB).exists() or Rate.objects.filter(object1=rateObB,object2=rateObA).exists():
             response="Query already exists"
         else:
@@ -236,6 +247,7 @@ def vote(request):
             client_rate = ClientRate.objects.get(id=client_id)
             client_rate.rates.add(Rate.objects.get(id=rate_id))
             client_rate.save()
+        Rate.objects.filter(id=rate_id).update(modified=datetime.datetime.now())
         response="Vote has been added"
     for_match_var=for_match(rate)
     for_match_var['response']=response
