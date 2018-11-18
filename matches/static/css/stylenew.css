@@ -20,7 +20,7 @@ body {
 }
 .nav.navbar-nav{
     margin-right:3em;
-    font-family: 'KoHo', sans-serif;
+    font-family: 'Muli', sans-serif;
 }
 
 /*ObjectA Search Field*/
@@ -57,7 +57,7 @@ body {
     box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
 }
 .form-control::placeholder{
-    font-family:'KoHo', sans-serif;
+    font-family:'Muli', sans-serif;
     color: #dc322f;
     opacity: 0.5;
 }
@@ -99,7 +99,7 @@ body {
 }
 /*index page*/
 .container{
-    font-family: 'KoHo', sans-serif;
+    font-family: 'Muli', sans-serif;
     line-height:2.5;
 }
 .container#index{
@@ -111,7 +111,7 @@ body {
 }
 .container#latest {
     margin-left: 0;
-    width:45%;
+    width:540px;
     display:inline-block;
 }
 .container#add{
@@ -133,11 +133,11 @@ body {
 }
 .match_text{
     text-align: center;
-    font-family: 'KoHo', sans-serif;
+    font-family: 'Muli', sans-serif;
     padding-bottom:5em;
 }
 .sideBySide{
-    font-family: 'KoHo', sans-serif;
+    font-family: 'Muli', sans-serif;
     display:flex;
     justify-content: space-evenly;
     margin-bottom:5em;
@@ -162,17 +162,17 @@ body {
             appearance:none;
 }
 .no{
-    font-family:'Anton',cursive;
+    font-family:'Muli',cursive;
     color:red;
     font-size:20px;
 }
 .yes{
-    font-family:'Anton',cursive;
+    font-family:'Muli',cursive;
     color:green;
     font-size:20px;
 }
 .irrelevant{
-    font-family:'Anton',cursive;
+    font-family:'Muli',cursive;
     color: orangered;
     font-size:20px;
 }
@@ -210,6 +210,14 @@ body {
 .cont{
     width:7em;
     height:7em;
+    display:inline-block;
+    position:center;
+    border-radius:50%;
+    /*border:0.2em solid #7F8177;*/
+}
+.contIndex{
+    width:2em;
+    height:2em;
     display:inline-block;
     position:center;
     border-radius:50%;

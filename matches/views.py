@@ -68,12 +68,6 @@ def humanize_date_difference(now, otherdate=None, offset=None):
     else:
         return "%ds ago" % delta_s
 # When 2 objects are searched
-def get_data(request):
-    data={
-        'sales':100,
-        'customers':10
-    }
-    return JsonResponse(data)
 
 def search(request):
     set_session(request)
@@ -316,7 +310,7 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
-        labels = ['Nope','Dumb Question','Yup']
+        labels = ['Nope','Dumb','Yup']
         default_items = [30,53,90]
         data = {
             'labels':labels,

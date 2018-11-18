@@ -4,7 +4,47 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>Match</title>
+    {% block head %}
+            {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Find out if two things go well together">
+    <meta name="keywords" content="Goes With, two things, norms">
+    <meta name="author" content="Yair Hasfari">
+    <meta property="og:image" content="https://github.com/yairhasfari/goeswith/blob/master/matches/static/img/logoSmall.png?raw=true">
+    <meta property="image" content="{% static 'img/logoSmall.png' %}">
+    <meta property="og:url" content="https://goeswith.herokuapp.com/find/{{ qA }}-{{ qB }}/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Find out if two things go well together">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"><!-- Kaushan Font -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Yesteryear|Muli" rel="stylesheet"> <!--Anton,Yesteryear Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|KoHo" rel="stylesheet"><!--Montserrat Font-->
+    <link rel="stylesheet" href="{% static 'css/stylenew.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src={% static 'js/anime.min.js' %}></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'img/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Goes With" />
+    <title>Goes With - Does {{ qA }} Go With {{ qB }}?</title>
+    {% endblock head %}
 </head>
 <body>
 {% block body %}
@@ -76,7 +116,7 @@
                                 display: true,
 
                                 labels: {
-                                    fontFamily: 'Montserrat',
+                                    fontFamily: 'Muli',
                                     boxWidth:20
                                 }
                             },
@@ -104,21 +144,23 @@
                 {% endblock jquery %}
                 </script>
                 <br>
-                <h4>Give your vote:</h4>
+                {% if not response == "You already gave your vote for this match" and not response == "Vote has been added"%}
+                <span class="largeText">Give your vote:</span>
                     <br>
 
                     <form action="{% url "vote" %}" method="post" >
                         {% csrf_token %}
                         <div class="cc-selector">
                             <input id="no" type="radio" name="opinion" value="no" onclick="this.form.submit()"/>
-                            <label class="opinion no" for="no">Nah</label>
+                            <label class="opinion no" for="no"><b>Nah</b></label>
                             <input id="irrelevant" type="radio" name="opinion" value="irrelevant" onclick="this.form.submit()" />
-                            <label class="opinion irrelevant" for="irrelevant">Dumb Question</label>
+                            <label class="opinion irrelevant" for="irrelevant"><b>Dumb Question</b></label>
                             <input id="yes" type="radio" name="opinion" value="yes" onclick="this.form.submit()" />
-                            <label class="opinion yes" for="yes">Yup</label>
+                            <label class="opinion yes" for="yes"><b>Yup</b></label>
                             <input type='hidden' name='rate_id' value='{{ m.id }}' />
                         </div>
                     </form>
+                {% endif %}
 {#                </div>#}
                 <h3>{{ response }}</h3>
             {% endfor %}

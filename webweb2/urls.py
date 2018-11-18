@@ -30,7 +30,6 @@ urlpatterns = [
     path('adder/<str:queryA>-<str:queryB>/',views.process2,name='adder'),
     path('random',views.random_match,name='random_match'),
     path('vote',views.vote,name='vote'),
-    path('get_data',views.get_data,name='get_data'),
     path('chart/data',ChartData.as_view()),
 ]
 if settings.DEBUG:
