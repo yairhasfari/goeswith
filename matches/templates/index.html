@@ -20,30 +20,37 @@
     </section>
     <section>
         <div class="container" id="latest">
-            <span class="largeText"><b>
+            <span class="largeText">
                 Recently Added:
-            </b></span>
+            </span>
             <br>
-            <ul style="list-style-type:none;">
                 {% for rate,time in latestRatesMix %}
                     <form method="get" action="{% url 'search' %}">
-                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ time }}</span></span></li>
+                        <div class="contIndex" style="background-image:url('{{ rate.object1.image }}');background-size:2em auto;">
+                        </div>&nbsp;
+                        <div class="contIndex" style="background-image:url('{{ rate.object2.image }}');background-size:2em auto;">
+                        </div>&nbsp;&nbsp;
+                        <span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ time }}</span></span>
                     </form>
                 {% endfor %}
-            </ul>
+
         </div>
         <div class="container" id="latest">
-            <span class="largeText"><b>
+            <span class="largeText">
                 Recently Rated:
-            </b></span>
+            </span>
             <br>
-            <ul style="list-style-type:none;">
+
                 {% for rate,i in latelyRatedMix %}
                     <form method="get" action="{% url 'search' %}">
-                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ i }}</span></span><li>
+                        <div class="contIndex" style="background-image:url('{{ rate.object1.image }}');background-size:2em auto;">
+                        </div>&nbsp;
+                        <div class="contIndex" style="background-image:url('{{ rate.object2.image }}');background-size:2em auto;">
+                        </div>&nbsp;&nbsp;
+                        <span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ i }}</span></span>
                     </form>
                 {% endfor %}
-            </ul>
+
         </div>
     </section>
 {% endblock %}
