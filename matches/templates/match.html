@@ -8,14 +8,14 @@
             {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Find out if two things go well together">
+    <meta name="description" content="{{ yes_percent }}% of {{ number_of_people }} think {{ qA }} Goes With {{ qB }}>
     <meta name="keywords" content="Goes With, two things, norms">
     <meta name="author" content="Yair Hasfari">
     <meta property="og:image" content="https://github.com/yairhasfari/goeswith/blob/master/matches/static/img/logoSmall.png?raw=true">
     <meta property="image" content="{% static 'img/logoSmall.png' %}">
     <meta property="og:url" content="https://goeswith.herokuapp.com/find/{{ qA }}-{{ qB }}/" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Find out if two things go well together">
+    <meta property="og:description" content="{{ yes_percent }}% of {{ number_of_people }} think {{ qA }} Goes With {{ qB }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"><!-- Kaushan Font -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Yesteryear|Muli" rel="stylesheet"> <!--Anton,Yesteryear Font -->
@@ -42,8 +42,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{% static 'img/favicon/ms-icon-144x144.png' %}">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Goes With" />
-    <title>Goes With - Does {{ qA }} Go With {{ qB }}?</title>
+    <meta property="og:title" content="Goes With - Does {{ qA }} Go With {{ qB }}?" />
+    <title>Goes With - Does "{{ qA }}" Go With "{{ qB }}"?</title>
     {% endblock head %}
 </head>
 <body>
