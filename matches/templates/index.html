@@ -25,9 +25,9 @@
             </b></span>
             <br>
             <ul style="list-style-type:none;">
-                {% for rate in latestRates %}
+                {% for rate,time in latestRatesMix %}
                     <form method="get" action="{% url 'search' %}">
-                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ rate.created }}</span></span></li>
+                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ time }}</span></span></li>
                     </form>
                 {% endfor %}
             </ul>
@@ -38,9 +38,9 @@
             </b></span>
             <br>
             <ul style="list-style-type:none;">
-                {% for rate in latelyRated %}
+                {% for rate,i in latelyRatedMix %}
                     <form method="get" action="{% url 'search' %}">
-                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ rate.created }}</span></span><li>
+                        <li><span class="mediumText"><a href="{% url 'find' queryA=rate.object1 queryB=rate.object2 %}">Do{% if rate.object1.plural == False %}es{% endif %} {{ rate.object1 }} <span class="logo">Go With</span> {{ rate.object2 }}?</a> - <span class="smallText">{{ i }}</span></span><li>
                     </form>
                 {% endfor %}
             </ul>

@@ -1,8 +1,10 @@
+import pytz
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, render_to_response, redirect
 from matches.models import Rate, Object, ClientRate
 from django.db.models import Max
 import random, inflect,datetime
+from datetime import timezone
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import sys
@@ -10,16 +12,61 @@ sys.path.insert(0, "gid/google_images_download")
 import google_images_download
 # Index:
 def home(request):
-    p=inflect.engine()
-    print(p.singular_noun('toilet')!=False)
-    set_session(request)
-    response = google_images_download.googleimagesdownload()
-    keyword='vegan'
-    absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True,'usage_rights':'labeled-for-reuse-with-modifications'})
-    print (absolute_image_paths.get(keyword)[0])
+    # p=inflect.engine()
+    # print(p.singular_noun('toilet')!=False)
+    # set_session(request)
+    # response = google_images_download.googleimagesdownload()
+    # keyword='boy'
+    # absolute_image_paths = response.download({'keywords':keyword,'limit':1,'no_download':True,'aspect_ratio':'square','print_urls':True,'usage_rights':'labeled-for-reuse-with-modifications'})
+    # print (absolute_image_paths.get(keyword)[0])
     latestRates=Rate.objects.filter(approved=True).order_by('-id',)[:10]
     latelyRated = Rate.objects.filter(approved=True).order_by('-modified',)[:10]
-    return render(request,'index.html',{'latestRates':latestRates,'latelyRated':latelyRated})
+    latelyRatedTime=[]
+    latestRatesTime=[]
+    for x in latestRates.values_list('created',flat=True):
+        z=pytz.utc.localize(datetime.datetime.now())
+        diffTime=humanize_date_difference(x,z)
+        latestRatesTime.append(diffTime)
+    for x in latelyRated.values_list('modified',flat=True):
+        z=pytz.utc.localize(datetime.datetime.now())
+        diffTime=humanize_date_difference(x,z)
+        latelyRatedTime.append(diffTime)
+    latelyRatedMix=zip(latelyRated,latelyRatedTime)
+    latestRatesMix = zip(latestRates, latestRatesTime)
+    print(latelyRatedTime)
+    print('0-----0')
+    print(latestRatesTime)
+    return render(request,'index.html',{'latestRatesMix':latestRatesMix,'latelyRatedMix':latelyRatedMix})
+def humanize_date_difference(now, otherdate=None, offset=None):
+    if otherdate:
+        dt = otherdate - now
+        offset = dt.seconds + (dt.days * 60*60*24)
+    if offset:
+        delta_s = offset % 60
+        offset /= 60
+        delta_m = offset % 60
+        offset /= 60
+        delta_h = offset % 24
+        offset /= 24
+        delta_d = offset
+    else:
+        raise ValueError("Must supply otherdate or offset (from now)")
+
+    if delta_d > 1:
+        if delta_d > 6:
+            date = now + datetime.timedelta(days=-delta_d, hours=-delta_h, minutes=-delta_m)
+            return date.strftime('%A, %Y %B %m, %H:%I')
+        else:
+            wday = now + datetime.timedelta(days=-delta_d)
+            return wday.strftime('%A')
+    if delta_d == 1:
+        return "Yesterday"
+    if delta_h > 0:
+        return "%d Hours, %d Minutes ago" % (delta_h, delta_m)
+    if delta_m > 0:
+        return "%d Minutes %d Seconds ago" % (delta_m, delta_s)
+    else:
+        return "%ds ago" % delta_s
 # When 2 objects are searched
 def get_data(request):
     data={

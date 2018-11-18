@@ -18,32 +18,33 @@
     <session id="-1438131136">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="3982" />
-          <entry key="html" value="6421" />
-          <entry key="py" value="10291" />
+          <entry key="css" value="4000" />
+          <entry key="html" value="6686" />
+          <entry key="py" value="11049" />
           <entry key="txt" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="3982" />
-          <entry key="HTML" value="6421" />
+          <entry key="CSS" value="4000" />
+          <entry key="HTML" value="6686" />
           <entry key="PLAIN_TEXT" value="104" />
-          <entry key="Python" value="10291" />
+          <entry key="Python" value="11049" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+            <state relative-caret-position="153">
+              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -80,14 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/templates/match.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="142" column="56" selection-start-line="142" selection-start-column="56" selection-end-line="142" selection-end-column="56" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#b#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -95,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" column="147" selection-start-line="29" selection-start-column="147" selection-end-line="29" selection-end-column="147" />
+            <state relative-caret-position="382">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -104,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/templates/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="221">
               <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
             </state>
           </provider>
@@ -112,17 +107,21 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/static/css/newstyle.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-170">
+              <caret line="139" column="22" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matches/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+            <state relative-caret-position="170">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
-                <marker date="1542472267355" expanded="true" signature="8386:8688" ph="..." />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1542524384830" expanded="true" signature="10109:10411" ph="..." />
               </folding>
             </state>
           </provider>
@@ -131,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gid/google_images_download/google_images_download.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="387" column="56" selection-start-line="387" selection-start-column="56" selection-end-line="387" selection-end-column="56" />
+            <state relative-caret-position="-51">
+              <caret line="423" column="11" selection-start-line="423" selection-start-column="11" selection-end-line="423" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -140,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webweb2/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="195">
               <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="24" />
             </state>
           </provider>
@@ -149,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+            <state relative-caret-position="136">
+              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <marker date="1542470031233" expanded="true" signature="1629:1636" ph="..." />
@@ -182,6 +181,9 @@
       <find>row</find>
       <find>googleimagesdownload</find>
       <find>rights</find>
+      <find>Montserrat</find>
+      <find>specific</find>
+      <find>values</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Yair\PycharmProjects\webweb2\matches\static\css</dir>
@@ -221,12 +223,12 @@
         <option value="$PROJECT_DIR$/webweb2/settings.py" />
         <option value="$PROJECT_DIR$/gid/google_images_download/google_images_download.py" />
         <option value="$PROJECT_DIR$/matches/static/css/newnewcss.css" />
-        <option value="$PROJECT_DIR$/matches/templates/match.html" />
-        <option value="$PROJECT_DIR$/matches/templates/index.html" />
         <option value="$PROJECT_DIR$/matches/models.py" />
         <option value="$PROJECT_DIR$/matches/static/css/new.css" />
+        <option value="$PROJECT_DIR$/matches/templates/match.html" />
         <option value="$PROJECT_DIR$/matches/templates/base.html" />
         <option value="$PROJECT_DIR$/matches/static/css/newstyle.css" />
+        <option value="$PROJECT_DIR$/matches/templates/index.html" />
         <option value="$PROJECT_DIR$/matches/views.py" />
       </list>
     </option>
@@ -444,17 +446,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28971255" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29425114" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="3" sideWeight="0.4977307" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.8449319" weight="0.20785597" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.28214827" side_tool="true" visible="true" weight="0.5417349" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.28139183" side_tool="true" visible="true" weight="0.5417349" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49848714" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.71785176" visible="true" weight="0.5417349" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.71860814" visible="true" weight="0.5417349" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -537,13 +539,7 @@
     <entry file="file://$PROJECT_DIR$/matches/static/css/style_new.css" />
     <entry file="file://$PROJECT_DIR$/matches/static/css/news.css" />
     <entry file="file://$PROJECT_DIR$/matches/static/css/newnew.css" />
-    <entry file="file://$PROJECT_DIR$/matches/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/static/css/style.css" />
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -559,20 +555,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matches/static/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="161" selection-end-line="161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matches/static/css/cssnew.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="160" selection-end-line="164" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/static/css/css.css" />
+    <entry file="file://$PROJECT_DIR$/matches/static/css/cssnew.css" />
     <entry file="file://$PROJECT_DIR$/webweb2/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -589,13 +573,7 @@
     <entry file="file://$PROJECT_DIR$/matches/static/img/searchicon_hover.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/matches/static/css/newcss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-end-line="230" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/static/css/newcss.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.535/google_images_download.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -631,54 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matches/templates/match.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="142" column="56" selection-start-line="142" selection-start-column="56" selection-end-line="142" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#b#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webweb2/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matches/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1542470031233" expanded="true" signature="1629:1636" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matches/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matches/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="147" selection-start-line="29" selection-start-column="147" selection-end-line="29" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matches/static/css/newstyle.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/matches/static/css/new.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -688,25 +618,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matches/templates/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="221">
           <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1542470031233" expanded="true" signature="1629:1636" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/templates/match.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webweb2/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/static/css/newstyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="139" column="22" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gid/google_images_download/google_images_download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="387" column="56" selection-start-line="387" selection-start-column="56" selection-end-line="387" selection-end-column="56" />
+        <state relative-caret-position="-51">
+          <caret line="423" column="11" selection-start-line="423" selection-start-column="11" selection-end-line="423" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matches/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matches/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+        <state relative-caret-position="170">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
-            <marker date="1542472267355" expanded="true" signature="8386:8688" ph="..." />
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1542524384830" expanded="true" signature="10109:10411" ph="..." />
           </folding>
         </state>
       </provider>
