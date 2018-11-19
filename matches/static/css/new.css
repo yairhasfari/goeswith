@@ -19,7 +19,7 @@ body {
     color: #dc322f;
 }
 .nav.navbar-nav{
-    margin-right:3em;
+    /*margin-right:3em;*/
     font-family: 'Muli', sans-serif;
 }
 
@@ -91,10 +91,10 @@ body {
 .logo{
     font-family: 'Yesteryear',cursive;
 }
-.nav.navbar-nav.navbar-left li a {
+.nav.navbar-nav.navbar-right li a {
     color: #dc322f;
 }
-.nav.navbar-nav.navbar-left li a:hover{
+.nav.navbar-nav.navbar-right li a:hover{
     color: #7F8177;
 }
 /*index page*/
