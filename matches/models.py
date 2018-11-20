@@ -10,7 +10,7 @@ class Category(models.Model):
         return self.name
 class Object(models.Model):
     name = models.CharField(max_length=100)
-    category=models.ForeignKey(Category,on_delete=models.CASCADE,default=None)
+    # category=models.ForeignKey(Category,on_delete=models.CASCADE,default=None)
     image = models.CharField(max_length=1000)
     plural = models.BooleanField(default=False)
     def __str__(self):
