@@ -12,11 +12,11 @@ def disapprove(modeladmin, request, queryset):
         rate.approved = False
         rate.save()
 disapprove.short_description = 'Disapprove Selected'
-def categorize(modeladmin, request, queryset):
-    for o in queryset:
-        o.category = 4
-        o.save()
-categorize.short_description = 'Generalize Selected'
+# def categorize(modeladmin, request, queryset):
+#     for o in queryset:
+#         o.category = 4
+#         o.save()
+# categorize.short_description = 'Generalize Selected'
 class RateAdmin(admin.ModelAdmin):
     list_display = ['object1', 'object2','approved','modified',]
     actions = [approve, disapprove,]  # <-- Add the list action function here
