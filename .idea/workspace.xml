@@ -36,7 +36,7 @@
         <counts>
           <entry key="css" value="4342" />
           <entry key="html" value="7841" />
-          <entry key="py" value="12380" />
+          <entry key="py" value="12402" />
           <entry key="txt" value="104" />
         </counts>
       </usages-collector>
@@ -45,7 +45,7 @@
           <entry key="CSS" value="4342" />
           <entry key="HTML" value="7841" />
           <entry key="PLAIN_TEXT" value="104" />
-          <entry key="Python" value="12380" />
+          <entry key="Python" value="12402" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -123,27 +123,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matches/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="7" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1542701362430" expanded="true" signature="140:288" ph="..." />
-                <marker date="1542701362430" expanded="true" signature="198:244" ph="..." />
-                <marker date="1542701362430" expanded="true" signature="1904:1906" ph="..." />
-                <marker date="1542701362430" expanded="true" signature="1981:1988" ph="..." />
+                <marker date="1542702614077" expanded="true" signature="142:296" ph="..." />
+                <marker date="1542702614077" expanded="true" signature="204:252" ph="..." />
+                <marker date="1542702614077" expanded="true" signature="1912:1914" ph="..." />
+                <marker date="1542702614077" expanded="true" signature="1989:1996" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matches/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -224,8 +224,8 @@
         <option value="$PROJECT_DIR$/matches/static/css/new.css" />
         <option value="$PROJECT_DIR$/matches/static/css/newstyle.css" />
         <option value="$PROJECT_DIR$/matches/templates/base.html" />
-        <option value="$PROJECT_DIR$/matches/admin.py" />
         <option value="$PROJECT_DIR$/matches/models.py" />
+        <option value="$PROJECT_DIR$/matches/admin.py" />
       </list>
     </option>
   </component>
@@ -307,6 +307,12 @@
               <item name="webweb2" type="b2602c69:ProjectViewProjectNode" />
               <item name="webweb2" type="462c0819:PsiDirectoryNode" />
               <item name="matches" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webweb2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webweb2" type="462c0819:PsiDirectoryNode" />
+              <item name="matches" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -425,6 +431,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.30332828" />
@@ -623,26 +630,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matches/admin.py">
+    <entry file="file://$PROJECT_DIR$/matches/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="7" selection-end-column="42" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1542702614077" expanded="true" signature="142:296" ph="..." />
+            <marker date="1542702614077" expanded="true" signature="204:252" ph="..." />
+            <marker date="1542702614077" expanded="true" signature="1912:1914" ph="..." />
+            <marker date="1542702614077" expanded="true" signature="1989:1996" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matches/models.py">
+    <entry file="file://$PROJECT_DIR$/matches/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1542701362430" expanded="true" signature="140:288" ph="..." />
-            <marker date="1542701362430" expanded="true" signature="198:244" ph="..." />
-            <marker date="1542701362430" expanded="true" signature="1904:1906" ph="..." />
-            <marker date="1542701362430" expanded="true" signature="1981:1988" ph="..." />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

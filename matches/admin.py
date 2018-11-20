@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Object,Rate,ClientRate,Category
+from .models import Object,Rate,ClientRate,\
+# from .models import Category
 
 def approve(modeladmin, request, queryset):
     for rate in queryset:
@@ -23,7 +24,7 @@ class RateAdmin(admin.ModelAdmin):
 class ObjectAdmin(admin.ModelAdmin):
     list_display=['name']
     actions=[categorize,]
-admin.site.register(Object,ObjectAdmin)
+# admin.site.register(Object,ObjectAdmin)
 admin.site.register(Rate,RateAdmin)
 admin.site.register(ClientRate)
-admin.site.register(Category)
+# admin.site.register(Category)
