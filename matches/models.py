@@ -1,13 +1,18 @@
 from django.db import models
 from datetime import datetime, timezone
-
+import matches
 # Create your models here.
+class Category(models.Model):
+    name=models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 class Object(models.Model):
     name = models.CharField(max_length=100)
     image = models.CharField(max_length=1000)
     plural = models.BooleanField(default=False)
     def __str__(self):
         return self.name
+
 class Rate(models.Model):
     object1 = models.ForeignKey(Object, on_delete=models.CASCADE,related_name="a")
     object2 = models.ForeignKey(Object, on_delete=models.CASCADE,related_name="b")
@@ -31,6 +36,9 @@ class ClientRate(models.Model):
     rates = models.ManyToManyField(Rate)
     def __str__(self):
         return "CookieID: " + str(self.id)
+# class Category(models.Model):
+#     name = models.CharField(max_length=100)
+
 # class DateAnswer(models.Model):
 #     date = models.DateField(blank=True)
 #     rate= models.ForeignKey(Rate,on_delete=models.CASCADE)

@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"><!-- Kaushan Font -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Yesteryear|Muli" rel="stylesheet"> <!--Anton,Yesteryear Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|KoHo" rel="stylesheet"><!--Montserrat Font-->
-    <link rel="stylesheet" href="{% static 'css/new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/newstyle.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
@@ -43,7 +43,15 @@
 
     </div>
 </nav>
-{% block body %}
-{% endblock %}
+<div class="wrap">
+    {% block body %}
+    {% endblock %}
+</div>
 </body>
+<footer class="page-footer">
+    <div class="footer-container">
+
+    </div>
+
+</footer>
 </html>

@@ -1,5 +1,4 @@
 body {
-
     padding-top: 70px;
     background-color: white;
     color: black;
@@ -242,9 +241,12 @@ body {
 a{
     color: #dc322f;
 }
+.wrap{
+    padding:0 0 80px;
+}
 .page-footer{
-    padding-top:20px;
+    padding-top:20%;
     position:relative;
     bottom:0;
-    border-top:1px solid #dc322f;
+    background-color: #dc322f;
 }
