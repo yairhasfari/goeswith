@@ -6,8 +6,8 @@ import matches
 #     name=models.CharField(max_length=100)
 #     class Meta:
 #         verbose_name_plural="Categories"
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 class Object(models.Model):
     name = models.CharField(max_length=100)
     # category=models.ForeignKey(Category,on_delete=models.CASCADE,default=None)
