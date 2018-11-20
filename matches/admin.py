@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Object,Rate,ClientRate,\
+from .models import Object,Rate,ClientRate
 # from .models import Category
 
 def approve(modeladmin, request, queryset):
