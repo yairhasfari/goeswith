@@ -23,7 +23,7 @@ class RateAdmin(admin.ModelAdmin):
 # Register your models here.
 class ObjectAdmin(admin.ModelAdmin):
     list_display=['name']
-# admin.site.register(Object,ObjectAdmin)
+admin.site.register(Object,ObjectAdmin)
 admin.site.register(Rate,RateAdmin)
 admin.site.register(ClientRate)
 # admin.site.register(Category)
